@@ -53,5 +53,12 @@ public class WindowMaster {
         //for material cost 3.50 per foot^2 for glass and 2.25 for trim
         cost = ((3.50f * areaOfWindow) + (2.25f * perimeterOfWindow));
         
+        
+        //display results to user
+        System.out.println("Window height is: " + stringHeight);
+        System.out.println("Window width is: " + stringWidth);
+        System.out.println("Window area is: " + areaOfWindow);
+        System.out.println("Window perimeter is: " + perimeterOfWindow);
+        System.out.println("Total cost is: " + cost);
     }
 }

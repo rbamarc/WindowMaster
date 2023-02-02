@@ -10,7 +10,7 @@ public class WindowMaster {
 
     public static void main(String[] args) {
         //a sample program to let a customer enter in the size of a window
-        //and get a cost output for the job
+        //and get a cost output for the glass and trim
         
         //declare variables for height and width
         float height;
@@ -44,7 +44,14 @@ public class WindowMaster {
         //currently no error handling to make sure the right kind of values 
         //were entered, that will be for a later practice
         
+        //adding calculations
+        areaOfWindow = height * width;
+        perimeterOfWindow = 2 * (height + width) ;
         
+        //now we add the cost for the glass and trim
+        //calculate the total using hard-coded values
+        //for material cost 3.50 per foot^2 for glass and 2.25 for trim
+        cost = ((3.50f * areaOfWindow) + (2.25f * perimeterOfWindow));
         
     }
 }

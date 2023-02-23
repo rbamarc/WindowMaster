@@ -16,10 +16,7 @@ public class WindowMaster {
         float height;
         float width;
         
-        //declare String variables to hold the user's height
-        //and width input
-        String stringHeight;
-        String stringWidth;
+        
         
         //declare other variables
         float areaOfWindow;
@@ -29,24 +26,18 @@ public class WindowMaster {
         // declare and initialize scanner object to get inputs
         Scanner myScanner = new Scanner(System.in);
         
-        //get input from user for the height and width
-        System.out.println("Please enter the height of the window: ");
-        stringHeight = myScanner.nextLine();
-        System.out.println("Please enter the width of the window: ");
-        stringWidth = myScanner.nextLine();
-        //these are string values and need to be converted to float values to 
-        //work with the given data type
         
-        //convert String values to float values
-        height = Float.parseFloat(stringHeight);
-        width = Float.parseFloat(stringWidth);
+        
+        //use method just created to get height and weight
+        height = readValue("Please enter value for height");
+        width = readValue("Please enter value for width ");
         
         //currently no error handling to make sure the right kind of values 
         //were entered, that will be for a later practice
         
         //adding calculations
-        areaOfWindow = height * width;
-        perimeterOfWindow = 2 * (height + width) ;
+        areaOfWindow = areaCalc(height, width);
+        perimeterOfWindow = permCalc(height, width) ;
         
         //now we add the cost for the glass and trim
         //calculate the total using hard-coded values
@@ -55,10 +46,38 @@ public class WindowMaster {
         
         
         //display results to user
-        System.out.println("Window height is: " + stringHeight);
-        System.out.println("Window width is: " + stringWidth);
+        System.out.println("Window height is: " + height);
+        System.out.println("Window width is: " + width);
         System.out.println("Window area is: " + areaOfWindow);
         System.out.println("Window perimeter is: " + perimeterOfWindow);
         System.out.println("Total cost is: " + cost);
+    }
+
+    public static float readValue (String prompt){
+        //declare and initialize  a Scanner variable
+        Scanner myScanner = new Scanner(System.in);
+
+        //print prompt to console
+        System.out.println(prompt);
+
+        //read value into string data type
+        String input = myScanner.nextLine();
+
+        //convert the string to a float
+        float floatVal = Float.parseFloat(input);
+
+        // return the float value
+        return floatVal;
+    }
+
+    public static float areaCalc(float h, float w){
+        float area = w * h;
+        return area;
+
+    }
+
+    public static float permCalc( float h, float w){
+        float perimeter = 2 * (h + w);
+        return perimeter;
     }
 }
